@@ -1,9 +1,10 @@
-body{
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #FFFF;
     color: #1F4E79;
+    font-size: 16px; /* Tamaño base de la fuente */
 }
 
 header {
@@ -11,10 +12,10 @@ header {
     color: #FFFF;
     padding: 20px 0;
     text-align: center;
-    position: fixed; /* Mantiene el encabezado fijo en la parte superior */
-    width: 100%; /* Establece el ancho del encabezado al 100% */
-    top: 0; /* Ajusta el encabezado en la parte superior */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .centered-menu {
@@ -44,20 +45,20 @@ nav ul li a:hover {
     color: #03508b;
 }
 
-.container{
-    /*max-width: 1200px;/*ajusta el ancho a las necesidades*/
-    margin: 0 auto;/*centra contenedor*/
-    /*padding: 20px;*/
+.container {
+    max-width: 1200px; /* Ajusta el ancho a las necesidades */
+    margin: 0 auto; /* Centra el contenedor */
 }
 
-main{
-   text-align: center;
+main {
+    text-align: center;
 }
+
 .inicio-section {
-    background-image: url('assets/img/header-background-mobile.jpg'); /* Ruta de tu imagen de fondo */
-    background-size: cover; /* Cubre todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    color: #fff; /* Color del texto */
+    background-image: url('/assets/img/header-background-mobile.jpg'); /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
     text-align: center;
     padding: 100px 0; /* Ajusta el espacio interno según sea necesario */
     margin-top: 65px;
@@ -78,12 +79,13 @@ main{
     margin-bottom: 40px; /* Espacio inferior */
 }
 
-section{
+section {
     padding: 20px;
 }
+
 #fotos {
-    width: 95%; /* Ancho del section al 90% de la pantalla */
-    margin: 0px auto; /* Margen automático en la parte superior e inferior, y centrado horizontalmente */
+    width: 95%; /* Ancho del section al 95% de la pantalla */
+    margin: 0 auto; /* Margen automático en la parte superior e inferior, y centrado horizontalmente */
 }
 
 .slider-frame {
@@ -107,14 +109,16 @@ section{
 .slider-frame img {
     width: 100%; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que las imágenes cubran el contenedor sin deformarse */
 }
+
 @keyframes slide {
-    0%, 100% { margin-left: 0; } /* Comienzo y final de la animación con el primer fotograma */
-    25% { margin-left: 0; } /* Primer imagen */
-    50% { margin-left: -100%; } /* Segunda imagen */
-    75% { margin-left: -200%; } /* Tercera imagen */
-    animation-duration: 30s; /* Duración total de la animación */
+    0%, 100% { margin-left: 0; }
+    25% { margin-left: 0; }
+    50% { margin-left: -100%; }
+    75% { margin-left: -200%; }
 }
+
 #botones {
     text-align: center;
     padding: 20px;
@@ -130,8 +134,8 @@ section{
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
-    background-color: #007bff; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
+    background-color: #007bff;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -139,11 +143,10 @@ section{
 }
 
 .boton:hover {
-    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+    background-color: #0056b3;
 }
 
 #servicios {
-  /*  margin-top: 20px;*/
     background-color: #c9f8e8;
 }
 
@@ -173,18 +176,20 @@ section{
 .servicio:hover .descripcion {
     display: block;
 }
+
 .ubicacion-container {
-    display: flex; /* Utiliza flexbox para organizar los elementos en fila */
-    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    flex-wrap: wrap; /* Asegura que los elementos se envuelvan en pantallas pequeñas */
+    align-items: center;
 }
 
 .mapa {
-    flex: 1; /* El mapa ocupará el 50% del contenedor */
-    margin-right: 20px; /* Espacio entre el mapa y la dirección */
+    flex: 1;
+    margin-right: 20px;
 }
 
 .direccion {
-    flex: 1; /* La dirección ocupará el 50% del contenedor */
+    flex: 1;
 }
 
 footer {
@@ -192,6 +197,7 @@ footer {
     color: #fff;
     padding: 20px 0;
     display: flex;
+    flex-wrap: wrap; /* Asegura que los elementos se ajusten en pantallas pequeñas */
     justify-content: space-between;
     text-align: center;
 }
@@ -214,11 +220,13 @@ footer {
 .opening-hours {
     padding-right: 20px;
 }
+
 .whatsapp-icon {
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
+
 .whatsapp-icon a {
     display: flex;
     justify-content: center;
@@ -228,28 +236,70 @@ footer {
     border-radius: 50%;
     background-color: #25d366;
     transition: transform 0.3s;
-    text-decoration: none; /* Elimina la decoración de texto (como la línea azul) */
+    text-decoration: none;
 }
 
 .whatsapp-icon a:hover {
-    transform: scale(1.1); /* Efecto de crecimiento al pasar el mouse */
+    transform: scale(1.1);
 }
 
 .whatsapp-icon i {
     color: #fff;
-    font-size: 48px; /* Tamaño predeterminado del icono más grande */
+    font-size: 48px;
 }
 
-/*estilos para dispositivos*/
-@media only screen and(max-width: 600px){
-    nav ul li{
+/* Media Queries */
+
+/* Para dispositivos móviles (600px o menos) */
+@media only screen and (max-width: 600px) {
+    nav ul li {
         display: block;
         margin-bottom: 10px;
     }
-    nav ul li:last-child{
+    nav ul li:last-child {
         margin-top: 0;
     }
-    nav ul li a{
+    nav ul li a {
         display: block;
+    }
+    .inicio-section h1 {
+        font-size: 28px;
+    }
+    .inicio-section p {
+        font-size: 16px;
+    }
+    .servicio {
+        flex-basis: 100%; /* Columna completa en pantallas pequeñas */
+    }
+    .ubicacion-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .whatsapp-icon {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Para tabletas (entre 600px y 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .inicio-section h1 {
+        font-size: 30px;
+    }
+    .inicio-section p {
+        font-size: 18px;
+    }
+    .servicio {
+        flex-basis: 45%;
+    }
+}
+
+/* Para pantallas grandes (más de 1200px) */
+@media only screen and (min-width: 1201px) {
+    .inicio-section h1 {
+        font-size: 48px;
+    }
+    .inicio-section p {
+        font-size: 24px;
     }
 }
